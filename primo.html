@@ -1,0 +1,56 @@
+<html>
+    <script>
+
+        //1- Inserir um numero como parametro
+        function verificaNumeroPrimo(numero){
+
+            //2- Regra 1: numero < 2 e > -2 não é primo
+            var num = numero;
+            if (num < 2 && num > -2) {
+                console.log("O número "+ num +" não é primo");
+        
+            //3- Regra 2: numero 2 e -2 são primos
+            } else if (num === 2 || num === -2){
+                console.log("O número "+ num +" é primo");
+            
+            //4- Checar numeros > 2 (positivos maiores que 2)
+            } else if (num > 2){
+                var primo = true;
+            
+                //5- Dividir o numero por 2, incrementar até ter resto = 0
+                for (var divisor = 2; divisor < num; divisor++) {
+
+                        //6- Se resto = 0, então não é primo
+                        if (num % divisor === 0){
+                            primo = false;
+                            break;
+                        }
+                }
+                if (primo == true){
+                    console.log("O número "+ num +" é primo");
+                } else {
+                    console.log("O número "+ num +" não é primo");
+                }
+            
+            //7- Checar numeros < -2 (negativos menores que 2)
+            } else if (num < -2) {
+                var primo = true;
+            
+                //8- Dividir o numero por -2, decrementar até ter resto = 0
+                for (var divisor = -2; divisor > num; divisor--) {
+            
+                        //9- Se resto = 0, então não é primo
+                        if (num % divisor === 0){
+                            primo = false;
+                            break;
+                        }
+                }
+                if (primo == true){
+                    console.log("O número "+ num +" é primo");
+                } else {
+                    console.log("O número "+ num +" não é primo");
+                }
+            }
+        }
+    </script>
+</html>
